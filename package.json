@@ -1,0 +1,32 @@
+{
+  "name": "@upstatement/prettier-config",
+  "version": "0.1.0",
+  "description": "Upstatement's base prettier configuration",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "pretty-quick --staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Upstatement/prettier-config"
+  },
+  "keywords": [
+    "prettier",
+    "config",
+    "upstatement"
+  ],
+  "author": {
+    "name": "Upstatement",
+    "email": "tech@upstatement.com",
+    "twitter": "@upstatement"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Upstatement/prettier-config/issues"
+  },
+  "dependencies": {
+    "husky": "^0.14.3",
+    "prettier": "^1.13.6",
+    "pretty-quick": "^1.6.0"
+  }
+}
