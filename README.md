@@ -35,7 +35,7 @@ Never fear! Just add an additional `.prettierrc` file with the following:
 
 ## How to test this module locally
 
-Once you've cloned this repo, create a global link for this package:
+In this repo, create a global link for this package:
 
 ```bash
 npm link
