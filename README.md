@@ -33,6 +33,22 @@ Never fear! Just add an additional `.prettierrc` file with the following:
 }
 ```
 
+## Running prettier with precommit
+
+Install [husky](https://github.com/typicode/husky) and [pretty-quick](https://github.com/azz/pretty-quick) to use precommits to run prettier on your files:
+
+```bash
+npm install --save-dev husky pretty-quick
+```
+
+Then in your `package.json` file:
+
+```json
+"scripts": {
+  "precommit": "pretty-quick --staged"
+},
+```
+
 ## How to test this module locally
 
 In this repo, create a global link for this package:
@@ -51,20 +67,4 @@ And finally in that project's `prettier.config.js`, include:
 
 ```js
 module.exports = require('@upstatement/prettier-config');
-```
-
-## Running prettier with precommit
-
-Install [husky](https://github.com/typicode/husky) and [pretty-quick](https://github.com/azz/pretty-quick) to use precommits to run prettier on your files:
-
-```bash
-npm install --save-dev husky pretty-quick
-```
-
-Then in your `package.json` file:
-
-```json
-"scripts": {
-  "precommit": "pretty-quick --staged"
-},
 ```
