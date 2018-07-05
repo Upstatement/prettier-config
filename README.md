@@ -35,10 +35,10 @@ Never fear! Just add an additional `.prettierrc` file with the following:
 
 ## Running prettier with precommit
 
-Install [husky](https://github.com/typicode/husky) and [pretty-quick](https://github.com/azz/pretty-quick) to use precommits to run prettier on your files:
+Install [husky](https://github.com/typicode/husky), [prettier](https://prettier.io/), and [pretty-quick](https://github.com/azz/pretty-quick) to use precommits to run prettier on your files:
 
 ```bash
-npm install --save-dev husky pretty-quick
+npm install --save-dev husky prettier pretty-quick
 ```
 
 Then in your `package.json` file:
