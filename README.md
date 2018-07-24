@@ -1,6 +1,6 @@
 # prettier-config
 
-Upstatement's official [`prettier`](https://prettier.io) configuration.
+Upstatement's base [`prettier`](https://prettier.io) configuration.
 
 ## Installation
 
@@ -61,9 +61,7 @@ If you already have `lint-staged` running ESLint on precommit, you can just add 
 }
 ```
 
-## Editor Integration
-
-https://prettier.io/docs/en/editors.html
+## [Editor Integration](https://prettier.io/docs/en/editors.html)
 
 ### Visual Studio Code
 
@@ -81,7 +79,7 @@ TBD
 
 ## Enforced Rules
 
-Check out Prettier's config options [here](https://prettier.io/docs/en/options.html).
+Check out all of Prettier's config options [here](https://prettier.io/docs/en/options.html).
 
 - ### Print Width
 
