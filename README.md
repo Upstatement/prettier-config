@@ -85,25 +85,31 @@ Check out Prettier's config options [here](https://prettier.io/docs/en/options.h
 
 - ### Print Width
 
-  Line wrap at 100 characters
+  Line wrap at 100 characters.
 
 - ### Tab Width
 
-  2 spaces per indentation-level
+  2 spaces per indentation-level.
 
 - ### Tabs
 
-  Indent lines with spaces, not tabs
+  Indent lines with spaces, not tabs.
 
 - ### Semicolons
 
-  Always print semicolons at the ends of statements
+  Always print semicolons at the ends of statements.
+
+  ```js
+  const greeting = 'hi';
+  ```
 
 - ### Quote
 
-  Use single quotes instead of double quotes
+  Use single quotes instead of double quotes.
 
-  `'single quotes are better'`
+  ```js
+  const quote = 'single quotes are better';
+  ```
 
 - ### Trailing Commas
 
@@ -118,7 +124,7 @@ Check out Prettier's config options [here](https://prettier.io/docs/en/options.h
 
 - ### Bracket Spacing
 
-  Print spaces between brackets in object literals
+  Print spaces between brackets in object literals.
 
   ```
   { foo: bar }
@@ -141,8 +147,6 @@ Check out Prettier's config options [here](https://prettier.io/docs/en/options.h
 
   Omit parens when possible.
 
-  `x => x`
-
-```
-
-```
+  ```js
+  x => x;
+  ```
