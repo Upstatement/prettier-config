@@ -4,15 +4,15 @@ Upstatement's official [`prettier`](https://prettier.io) configuration.
 
 ## Installation
 
-Install the package from [npm](https://www.npmjs.com/package/@upstatement/prettier-config) using `npm` or `yarn`:
+Requires **npm 5+**
 
 ```bash
-npm install --save-dev @upstatement/prettier-config
+npx install-peerdeps --dev @upstatement/prettier-config
 ```
 
 ## Usage
 
-Create a `prettier.config.js` file in your project's root that re-exports the module:
+Create a `prettier.config.js` file at the root of your project that contains:
 
 ```js
 module.exports = require('@upstatement/prettier-config');
@@ -20,7 +20,7 @@ module.exports = require('@upstatement/prettier-config');
 
 ## Alternative 4 space config
 
-Never fear! Just add an additional `.prettierrc` file with the following:
+Just add an additional `.prettierrc` file with the following:
 
 ```json
 {
@@ -33,38 +33,101 @@ Never fear! Just add an additional `.prettierrc` file with the following:
 }
 ```
 
-## Running prettier with precommit
+## Pre-commit Hook
 
-Install [husky](https://github.com/typicode/husky), [prettier](https://prettier.io/), and [pretty-quick](https://github.com/azz/pretty-quick) to use precommits to run prettier on your files:
+As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`pretty-quick`](https://github.com/azz/pretty-quick).
 
-```bash
-npm install --save-dev husky prettier pretty-quick
-```
-
-Then in your `package.json` file:
+1.  `npm install --save-dev husky prettier pretty-quick`
+2.  Update your `package.json` like this:
 
 ```json
-"scripts": {
-  "precommit": "pretty-quick --staged"
-},
+{
+  "scripts": {
+    "precommit": "pretty-quick --staged"
+  }
+}
 ```
 
-## How to test this module locally
+## Editor Integration
 
-In this repo, create a global link for this package:
+https://prettier.io/docs/en/editors.html
 
-```bash
-npm link
-```
+### Visual Studio Code
 
-Then in the project you want to use this config for, link-install this package:
+1.  Install Prettier extension: `View → Extensions` then find and install Prettier - Code formatter
+2.  Reload the editor
+3.  In your user settings `Code -> Preferences -> Settings` add `editor.formatOnSave: true`
 
-```bash
-npm link @upstatement/prettier-config
-```
+### Sublime Text 3
 
-And finally in that project's `prettier.config.js`, include:
+TBD
 
-```js
-module.exports = require('@upstatement/prettier-config');
-```
+### Atom
+
+TBD
+
+## Enforced Rules
+
+Check out Prettier's config options [here](https://prettier.io/docs/en/options.html).
+
+- ### Print Width
+
+  Line wrap at 100 characters
+
+- ### Tab Width
+
+  2 spaces per indentation-level
+
+- ### Tabs
+
+  Indent lines with spaces, not tabs
+
+- ### Semicolons
+
+  Always print semicolons at the ends of statements
+
+- ### Quote
+
+  Use single quotes instead of double quotes
+
+  `'single quotes are better'`
+
+- ### Trailing Commas
+
+  Use trailing commas wherever possible.
+
+  ```js
+  const obj = {
+    a: 'hi',
+    b: 'hey',
+  };
+  ```
+
+````
+- ### Bracket Spacing
+
+  Print spaces between brackets in object literals
+
+  ```
+  { foo: bar }
+  ```
+
+- ### JSX Brackets
+
+  Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+
+  ```
+  <button
+    className="prettier-class"
+    id="prettier-id"
+    onClick={this.handleClick}>
+    Click Here
+  </button>
+  ```
+
+- ### Arrow Function Parentheses
+
+  Omit parens when possible.
+
+  `x => x`
+````
