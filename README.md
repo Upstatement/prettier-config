@@ -48,6 +48,19 @@ As another line of defense, if you want Prettier to automatically fix your error
 }
 ```
 
+If you already have `lint-staged` running ESLint on precommit, you can just add `pretty-quick` with `&&`:
+
+```json
+{
+  "scripts": {
+    "precommit": "lint-staged && pretty-quick --staged"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  }
+}
+```
+
 ## Editor Integration
 
 https://prettier.io/docs/en/editors.html
@@ -103,7 +116,6 @@ Check out Prettier's config options [here](https://prettier.io/docs/en/options.h
   };
   ```
 
-````
 - ### Bracket Spacing
 
   Print spaces between brackets in object literals
@@ -130,4 +142,7 @@ Check out Prettier's config options [here](https://prettier.io/docs/en/options.h
   Omit parens when possible.
 
   `x => x`
-````
+
+```
+
+```
