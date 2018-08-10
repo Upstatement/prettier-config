@@ -4,8 +4,6 @@ Upstatement's base [`prettier`](https://prettier.io) configuration.
 
 ## Installation
 
-Requires **npm 5+**
-
 ```bash
 npm install --save-dev @upstatement/prettier-config
 ```
