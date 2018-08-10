@@ -7,7 +7,7 @@ Upstatement's base [`prettier`](https://prettier.io) configuration.
 Requires **npm 5+**
 
 ```bash
-npx install-peerdeps --dev @upstatement/prettier-config
+npm install --save-dev @upstatement/prettier-config
 ```
 
 ## Usage
