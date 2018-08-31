@@ -1,6 +1,6 @@
 # prettier-config
 
-Upstatement's base [`prettier`](https://prettier.io) configuration.
+Upstatement's [`prettier`](https://prettier.io) configuration.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Create a `prettier.config.js` file at the root of your project that contains:
 module.exports = require('@upstatement/prettier-config');
 ```
 
-## Alternative 4 space config
+## Four Space Config
 
 In addition to the `prettier.config.js` file, add an additional `.prettierrc` file with the following:
 
