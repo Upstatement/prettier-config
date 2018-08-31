@@ -81,6 +81,17 @@ TBD
 
 TBD
 
+## How to publish to npm
+
+Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-started/publishing-npm-packages#how-to-update-a-package).
+
+1. `npm login`
+    * Make sure you're logged into Upstatement's npm account with the credentials from 1pass. `npm whoami` will tell you if you're already logged in.
+2. `npm version <update_type>`
+    * `update_type` can be `patch`, `minor`, or `major`. If you don't know which one to use, go read about [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning).
+3. `npm publish`
+
+
 ## Enforced Rules
 
 Check out all of Prettier's config options [here](https://prettier.io/docs/en/options.html).
