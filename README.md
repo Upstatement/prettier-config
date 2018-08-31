@@ -4,8 +4,14 @@ Upstatement's base [`prettier`](https://prettier.io) configuration.
 
 ## Installation
 
-```bash
+```sh
 npm install --save-dev @upstatement/prettier-config
+```
+
+If you don't have it installed already, also install `prettier` as a devDependency.
+
+```sh
+npm install --save-dev prettier
 ```
 
 ## Usage
