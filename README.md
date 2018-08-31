@@ -24,7 +24,7 @@ module.exports = require('@upstatement/prettier-config');
 
 ## Alternative 4 space config
 
-Just add an additional `.prettierrc` file with the following:
+In addition to the `prettier.config.js` file, add an additional `.prettierrc` file with the following:
 
 ```json
 {
