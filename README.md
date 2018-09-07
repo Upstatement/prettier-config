@@ -24,7 +24,7 @@ module.exports = require('@upstatement/prettier-config');
 
 ## Four Space Config
 
-In addition to the `prettier.config.js` file, add an additional `.prettierrc` file with the following:
+If you prefer 4 spaces instead of 2, just add an additional `.prettierrc` file on top of your `prettier.config.js` with the following:
 
 ```json
 {
@@ -52,7 +52,7 @@ As another line of defense, if you want Prettier to automatically fix your error
 }
 ```
 
-If you already have `lint-staged` running ESLint on precommit, you can just add `pretty-quick` with `&&`:
+If you already have `lint-staged` running [ESLint](https://github.com/Upstatement/eslint-config#pre-commit-hook) on precommit, you can just add `pretty-quick` on top of it:
 
 ```json
 {
@@ -75,11 +75,11 @@ If you already have `lint-staged` running ESLint on precommit, you can just add 
 
 ### Sublime Text 3
 
-TBD
+[https://packagecontrol.io/packages/JsPrettier](https://packagecontrol.io/packages/JsPrettier)
 
 ### Atom
 
-TBD
+[https://atom.io/packages/prettier-atom](https://atom.io/packages/prettier-atom)
 
 ## How to publish to npm
 
@@ -94,21 +94,21 @@ Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-star
 
 ## Enforced Rules
 
-Check out all of Prettier's config options [here](https://prettier.io/docs/en/options.html).
+Check out all of Prettier's [configuration options](https://prettier.io/docs/en/options.html).
 
-- ### Print Width
+* ### Print Width
 
   Line wrap at 100 characters.
 
-- ### Tab Width
+* ### Tab Width
 
   2 spaces per indentation-level.
 
-- ### Tabs
+* ### Tabs
 
   Indent lines with spaces, not tabs.
 
-- ### Semicolons
+* ### Semicolons
 
   Always print semicolons at the ends of statements.
 
@@ -116,7 +116,7 @@ Check out all of Prettier's config options [here](https://prettier.io/docs/en/op
   const greeting = 'hi';
   ```
 
-- ### Quote
+* ### Quote
 
   Use single quotes instead of double quotes.
 
@@ -124,7 +124,7 @@ Check out all of Prettier's config options [here](https://prettier.io/docs/en/op
   const quote = 'single quotes are better';
   ```
 
-- ### Trailing Commas
+* ### Trailing Commas
 
   Use trailing commas wherever possible.
 
@@ -135,19 +135,19 @@ Check out all of Prettier's config options [here](https://prettier.io/docs/en/op
   };
   ```
 
-- ### Bracket Spacing
+* ### Bracket Spacing
 
   Print spaces between brackets in object literals.
 
-  ```
+  ```js
   { foo: bar }
   ```
 
-- ### JSX Brackets
+* ### JSX Brackets
 
   Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
-  ```
+  ```jsx
   <button
     className="prettier-class"
     id="prettier-id"
@@ -156,7 +156,7 @@ Check out all of Prettier's config options [here](https://prettier.io/docs/en/op
   </button>
   ```
 
-- ### Arrow Function Parentheses
+* ### Arrow Function Parentheses
 
   Omit parens when possible.
 
