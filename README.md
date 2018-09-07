@@ -39,9 +39,9 @@ If you prefer 4 spaces instead of 2, just add an additional `.prettierrc` file o
 
 ## Pre-commit Hook
 
-As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`pretty-quick`](https://github.com/azz/pretty-quick).
+As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`pretty-quick`](https://github.com/azz/pretty-quick) with [`husky`](https://github.com/typicode/husky), which manage git hooks.
 
-1.  `npm install --save-dev husky prettier pretty-quick`
+1.  `npm install --save-dev prettier pretty-quick husky`
 2.  Update your `package.json` like this:
 
 ```json
@@ -90,7 +90,6 @@ Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-star
 2. `npm version <update_type>`
     * `update_type` can be `patch`, `minor`, or `major`. If you don't know which one to use, go read about [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning).
 3. `npm publish`
-
 
 ## Enforced Rules
 
