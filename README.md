@@ -1,5 +1,7 @@
 # prettier-config
 
+[![npm version](https://badge.fury.io/js/%40upstatement%2Fprettier-config.svg)](https://badge.fury.io/js/%40upstatement%2Fprettier-config)
+
 Upstatement's [`prettier`](https://prettier.io) configuration.
 
 ## Installation
