@@ -1,6 +1,6 @@
 {
   "name": "@upstatement/prettier-config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Upstatement's base prettier configuration",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
     "url": "https://github.com/Upstatement/prettier-config/issues"
   },
   "dependencies": {
-    "prettier": "^1.14.2"
+    "prettier": "^1.x.x"
   }
 }
