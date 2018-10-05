@@ -25,6 +25,6 @@
     "url": "https://github.com/Upstatement/prettier-config/issues"
   },
   "dependencies": {
-    "prettier": "^1.14.2"
+    "prettier": "^1.x.x"
   }
 }

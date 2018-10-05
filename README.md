@@ -4,6 +4,8 @@
 
 Upstatement's [`prettier`](https://prettier.io) configuration.
 
+Pairs well with our [`ESLint configuration`](https://www.npmjs.com/package/@upstatement/eslint-config).
+
 ## Installation
 
 ```sh
@@ -97,19 +99,19 @@ Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-star
 
 Check out all of Prettier's [configuration options](https://prettier.io/docs/en/options.html).
 
-* ### Print Width
+* **Print Width**
 
   Line wrap at 100 characters.
 
-* ### Tab Width
+* **Tab Width**
 
   2 spaces per indentation-level.
 
-* ### Tabs
+* **Tabs**
 
   Indent lines with spaces, not tabs.
 
-* ### Semicolons
+* **Semicolons**
 
   Always print semicolons at the ends of statements.
 
@@ -117,7 +119,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   const greeting = 'hi';
   ```
 
-* ### Quote
+* **Quote**
 
   Use single quotes instead of double quotes.
 
@@ -125,7 +127,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   const quote = 'single quotes are better';
   ```
 
-* ### Trailing Commas
+* **Trailing Commas**
 
   Use trailing commas wherever possible.
 
@@ -136,7 +138,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   };
   ```
 
-* ### Bracket Spacing
+* **Bracket Spacing**
 
   Print spaces between brackets in object literals.
 
@@ -144,7 +146,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   { foo: bar }
   ```
 
-* ### JSX Brackets
+* **JSX Brackets**
 
   Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
@@ -157,7 +159,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   </button>
   ```
 
-* ### Arrow Function Parentheses
+* **Arrow Function Parentheses**
 
   Omit parens when possible.
 
