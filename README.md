@@ -8,6 +8,8 @@ Pairs well with our [`ESLint configuration`](https://www.npmjs.com/package/@upst
 
 ## Installation
 
+### npm
+
 ```sh
 npm install --save-dev @upstatement/prettier-config
 ```
@@ -16,6 +18,12 @@ If you don't have it installed already, also install `prettier` as a devDependen
 
 ```sh
 npm install --save-dev prettier
+```
+
+### yarn
+
+```sh
+yarn add --dev @upstatement/prettier-config prettier
 ```
 
 ## Usage
