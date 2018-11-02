@@ -36,17 +36,10 @@ module.exports = require('@upstatement/prettier-config');
 
 ## Four Space Config
 
-If you prefer 4 spaces instead of 2, just add an additional `.prettierrc` file on top of your `prettier.config.js` with the following:
+If you prefer 4 spaces instead of 2, use this in your `prettier.config.js` instead:
 
-```json
-{
-  "overrides": [
-    {
-      "files": "*",
-      "options": { "tabWidth": 4 }
-    }
-  ]
-}
+```js
+module.exports = require('@upstatement/prettier-config/four-spaces');
 ```
 
 ## Pre-commit Hook
