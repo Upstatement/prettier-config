@@ -51,9 +51,11 @@ As another line of defense, if you want Prettier to automatically fix your error
 
 ```json
 {
-  "scripts": {
-    "precommit": "pretty-quick --staged"
-  }
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+    }
+  },
 }
 ```
 
