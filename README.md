@@ -28,13 +28,20 @@ yarn add --dev @upstatement/prettier-config prettier
 
 ## Usage
 
+We export two ESLint configurations for your usage:
+
+1. [Default (2 space)](#default-config)
+2. [Four Spaces](#four-spaces-config)
+
+### Default Config
+
 Create a `prettier.config.js` file at the root of your project that contains:
 
 ```js
 module.exports = require('@upstatement/prettier-config');
 ```
 
-## Four Space Config
+### Four Spaces Config
 
 If you prefer 4 spaces instead of 2, use this in your `prettier.config.js` instead:
 
@@ -53,9 +60,9 @@ As another line of defense, if you want Prettier to automatically fix your error
 {
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
+      "pre-commit": "pretty-quick --staged"
     }
-  },
+  }
 }
 ```
 
@@ -93,28 +100,28 @@ If you already have `lint-staged` running [ESLint](https://github.com/Upstatemen
 Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-started/publishing-npm-packages#how-to-update-a-package).
 
 1. `npm login`
-    * Make sure you're logged into Upstatement's npm account with the credentials from 1pass. `npm whoami` will tell you if you're already logged in.
+   - Make sure you're logged into Upstatement's npm account with the credentials from 1pass. `npm whoami` will tell you if you're already logged in.
 2. `npm version <update_type>`
-    * `update_type` can be `patch`, `minor`, or `major`. If you don't know which one to use, go read about [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning).
+   - `update_type` can be `patch`, `minor`, or `major`. If you don't know which one to use, go read about [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning).
 3. `npm publish`
 
 ## Enforced Rules
 
 Check out all of Prettier's [configuration options](https://prettier.io/docs/en/options.html).
 
-* **Print Width**
+- **Print Width**
 
   Line wrap at 100 characters.
 
-* **Tab Width**
+- **Tab Width**
 
   2 spaces per indentation-level.
 
-* **Tabs**
+- **Tabs**
 
   Indent lines with spaces, not tabs.
 
-* **Semicolons**
+- **Semicolons**
 
   Always print semicolons at the ends of statements.
 
@@ -122,7 +129,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   const greeting = 'hi';
   ```
 
-* **Quote**
+- **Quote**
 
   Use single quotes instead of double quotes.
 
@@ -130,7 +137,7 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   const quote = 'single quotes are better';
   ```
 
-* **Trailing Commas**
+- **Trailing Commas**
 
   Use trailing commas wherever possible.
 
@@ -141,28 +148,27 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   };
   ```
 
-* **Bracket Spacing**
+- **Bracket Spacing**
 
   Print spaces between brackets in object literals.
 
   ```js
-  { foo: bar }
+  {
+    foo: bar;
+  }
   ```
 
-* **JSX Brackets**
+- **JSX Brackets**
 
   Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
   ```jsx
-  <button
-    className="prettier-class"
-    id="prettier-id"
-    onClick={this.handleClick}>
+  <button className="prettier-class" id="prettier-id" onClick={this.handleClick}>
     Click Here
   </button>
   ```
 
-* **Arrow Function Parentheses**
+- **Arrow Function Parentheses**
 
   Omit parens when possible.
 
