@@ -70,8 +70,10 @@ If you already have `lint-staged` running [ESLint](https://github.com/Upstatemen
 
 ```json
 {
-  "scripts": {
-    "precommit": "lint-staged && pretty-quick --staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"]
