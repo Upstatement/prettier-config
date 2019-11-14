@@ -51,7 +51,7 @@ module.exports = require('@upstatement/prettier-config/four-spaces');
 
 ## Pre-commit Hook
 
-As another line of defense, if you want ESLint to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
+As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
 
 1. `npm install --save-dev prettier lint-staged husky`
 2. Update your `package.json` like this:
