@@ -51,32 +51,45 @@ module.exports = require('@upstatement/prettier-config/four-spaces');
 
 ## Pre-commit Hook
 
-As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`pretty-quick`](https://github.com/azz/pretty-quick) with [`husky`](https://github.com/typicode/husky), which manage git hooks.
+As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
 
-1.  `npm install --save-dev prettier pretty-quick husky`
-2.  Update your `package.json` like this:
+1. `npm install --save-dev prettier lint-staged husky`
+2. Update your `package.json` like this:
 
 ```json
 {
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
   }
 }
 ```
 
-If you already have `lint-staged` running [ESLint](https://github.com/Upstatement/eslint-config#pre-commit-hook) on precommit, you can just add `pretty-quick` on top of it:
+If you already have `lint-staged` running [ESLint](https://github.com/Upstatement/eslint-config#pre-commit-hook), just add the prettier step on top of it:
 
 ```json
 {
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
+      "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
   }
 }
 ```
@@ -85,9 +98,9 @@ If you already have `lint-staged` running [ESLint](https://github.com/Upstatemen
 
 ### Visual Studio Code
 
-1.  Install Prettier extension: `View → Extensions` then find and install Prettier - Code formatter
-2.  Reload the editor
-3.  In your user settings `Code -> Preferences -> Settings` add `editor.formatOnSave: true`
+1. Install Prettier extension: `View → Extensions` then find and install Prettier - Code formatter
+2. Reload the editor
+3. In your user settings `Code -> Preferences -> Settings` add `editor.formatOnSave: true`
 
 ### Sublime Text 3
 
