@@ -21,9 +21,6 @@
   "bugs": {
     "url": "https://github.com/Upstatement/prettier-config/issues"
   },
-  "scripts": {
-    "precommit": "pretty-quick --staged"
-  },
   "dependencies": {
     "prettier": "^1.x.x"
   }
