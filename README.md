@@ -49,6 +49,14 @@ If you prefer 4 spaces instead of 2, use this in your `prettier.config.js` inste
 module.exports = require('@upstatement/prettier-config/four-spaces');
 ```
 
+### Four tabs Config
+
+If you prefer 4 tabs instead of spaces, use this in your `prettier.config.js` instead:
+
+```js
+module.exports = require('@upstatement/prettier-config/tabs-spaces');
+```
+
 ## Pre-commit Hook
 
 As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
