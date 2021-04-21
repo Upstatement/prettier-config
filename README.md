@@ -2,9 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/%40upstatement%2Fprettier-config.svg)](https://badge.fury.io/js/%40upstatement%2Fprettier-config)
 
-Upstatement's [`prettier`](https://prettier.io) configuration.
+Upstatement's [prettier](https://prettier.io) configuration.
 
-Pairs well with our [`ESLint configuration`](https://www.npmjs.com/package/@upstatement/eslint-config).
+Pairs well with our [ESLint configuration](https://www.npmjs.com/package/@upstatement/eslint-config).
 
 ## Installation
 
@@ -51,48 +51,59 @@ module.exports = require('@upstatement/prettier-config/four-spaces');
 
 ## Pre-commit Hook
 
-As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
+As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [lint-staged](https://github.com/okonet/lint-staged) with [husky](https://github.com/typicode/husky).
 
-1. `npm install --save-dev prettier lint-staged husky`
-2. Update your `package.json` like this:
+1. Make sure your `npm` version is >= 7.0.0
 
-```json
-{
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+   ```shell
+   npm install -g npm@latest
+   ```
+
+2. Make sure your repo has been initialized with git
+
+   ```shell
+   git init --initial-branch=main
+   ```
+
+3. Install the npm packages
+
+   ```shell
+   npm install --save-dev lint-staged husky
+   ```
+
+4. Set up the `package.json` stuff
+
+   ```shell
+   npm set-script prepare "husky install" && npm run prepare \
+     && npm set-script lint-staged "lint-staged" \
+     && npx husky add .husky/pre-commit "npm run lint-staged"
+   ```
+
+5. Then in your `package.json` add
+
+   ```json
+    "lint-staged": {
+      "*.{js,css,json,md}": [
+        "prettier --write",
+        "git add"
+      ]
     }
-  }
-}
-```
+   ```
 
-If you already have `lint-staged` running [ESLint](https://github.com/Upstatement/eslint-config#pre-commit-hook), just add the prettier step on top of it:
+   If you already have `lint-staged` running [ESLint](https://github.com/Upstatement/eslint-config#pre-commit-hook), just add the prettier step on top of it:
 
-```json
-{
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
-}
-```
+   ```json
+   "lint-staged": {
+     "*.{js,css,json,md}": [
+       "prettier --write",
+       "git add"
+     ],
+     "*.js": [
+       "eslint --fix",
+       "git add"
+     ]
+   }
+   ```
 
 ## [Editor Integration](https://prettier.io/docs/en/editors.html)
 
