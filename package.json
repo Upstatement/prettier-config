@@ -1,6 +1,6 @@
 {
   "name": "@upstatement/prettier-config",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Upstatement's base prettier configuration",
   "main": "index.js",
   "repository": {
