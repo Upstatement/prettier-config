@@ -1,32 +1,46 @@
-# prettier-config
+# Upstatement Prettier Config
 
 [![npm version](https://badge.fury.io/js/%40upstatement%2Fprettier-config.svg)](https://badge.fury.io/js/%40upstatement%2Fprettier-config)
 
-Upstatement's [prettier](https://prettier.io) configuration.
+Pairs well with our [ESLint config](https://www.npmjs.com/package/@upstatement/eslint-config).
 
-Pairs well with our [ESLint configuration](https://www.npmjs.com/package/@upstatement/eslint-config).
+## Table of Contents
+
+- [Upstatement Prettier Config](#upstatement-prettier-config)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Configurations](#configurations)
+    - [Default Config](#default-config)
+    - [Four Spaces Config](#four-spaces-config)
+  - [Editor Integration & Autoformatting](#editor-integration--autoformatting)
+    - [VS Code](#vs-code)
+    - [Sublime Text 3](#sublime-text-3)
+    - [Atom](#atom)
+  - [Pre-commit Hooks](#pre-commit-hooks)
+  - [Publishing to npm](#publishing-to-npm)
+  - [Enforced Rules](#enforced-rules)
 
 ## Installation
 
-### npm
+1. Make sure your project is using a Node version >= `10`
 
-```sh
-npm install --save-dev @upstatement/prettier-config
-```
+2. Install dependencies
 
-If you don't have it installed already, also install `prettier` as a devDependency.
+    ```sh
+    npm install --save-dev @upstatement/prettier-config prettier@2.x.x
 
-```sh
-npm install --save-dev prettier
-```
+    # or
 
-### yarn
+    yarn add --dev @upstatement/prettier-config prettier@2.x.x
+    ```
 
-```sh
-yarn add --dev @upstatement/prettier-config prettier
-```
+3. Create a `prettier.config.js` file at the root of your project with the following:
 
-## Usage
+    ```js
+    module.exports = require('@upstatement/prettier-config');
+    ```
+
+## Configurations
 
 We export two ESLint configurations for your usage:
 
@@ -35,7 +49,7 @@ We export two ESLint configurations for your usage:
 
 ### Default Config
 
-Create a `prettier.config.js` file at the root of your project that contains:
+In your `prettier.config.js`:
 
 ```js
 module.exports = require('@upstatement/prettier-config');
@@ -43,13 +57,52 @@ module.exports = require('@upstatement/prettier-config');
 
 ### Four Spaces Config
 
-If you prefer 4 spaces instead of 2, use this in your `prettier.config.js` instead:
+Includes everything in the default config, but replaces the `tabWidth` rule with 4 spaces instead of 2 spaces.
+
+In your `prettier.config.js`:
 
 ```js
 module.exports = require('@upstatement/prettier-config/four-spaces');
 ```
 
-## Pre-commit Hook
+## [Editor Integration](https://prettier.io/docs/en/editors.html) & Autoformatting
+
+### VS Code
+
+1. Install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): `View → Extensions` then find and install `Prettier - Code formatter`
+2. Reload the editor
+3. Open your [settings JSON file](https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations) and add the following
+
+    ```json
+    // Format on save with Prettier rules
+    "editor.formatOnSave": true,
+    // Tell the ESLint plugin to run on save
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    // Turn off Prettier format on save, use ESLint to format instead
+    "[javascript]": {
+      "editor.formatOnSave": false
+    },
+    "[vue]": {
+      "editor.formatOnSave": false
+    },
+    "eslint.alwaysShowStatus": true,
+    // An array of language identifiers specify the files to be validated
+    "eslint.options": {
+      "extensions": [".html", ".js", ".vue", ".jsx"]
+    },
+    ```
+
+### Sublime Text 3
+
+[https://packagecontrol.io/packages/JsPrettier](https://packagecontrol.io/packages/JsPrettier)
+
+### Atom
+
+[https://atom.io/packages/prettier-atom](https://atom.io/packages/prettier-atom)
+
+## Pre-commit Hooks
 
 As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [lint-staged](https://github.com/okonet/lint-staged) with [husky](https://github.com/typicode/husky).
 
@@ -105,23 +158,7 @@ As another line of defense, if you want Prettier to automatically fix your error
    }
    ```
 
-## [Editor Integration](https://prettier.io/docs/en/editors.html)
-
-### Visual Studio Code
-
-1. Install Prettier extension: `View → Extensions` then find and install Prettier - Code formatter
-2. Reload the editor
-3. In your user settings `Code -> Preferences -> Settings` add `editor.formatOnSave: true`
-
-### Sublime Text 3
-
-[https://packagecontrol.io/packages/JsPrettier](https://packagecontrol.io/packages/JsPrettier)
-
-### Atom
-
-[https://atom.io/packages/prettier-atom](https://atom.io/packages/prettier-atom)
-
-## How to publish to npm
+## Publishing to npm
 
 Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-started/publishing-npm-packages#how-to-update-a-package).
 
@@ -135,19 +172,29 @@ Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-star
 
 Check out all of Prettier's [configuration options](https://prettier.io/docs/en/options.html).
 
-- **Print Width**
+<details>
+  <summary>Print Width</summary>
 
   Line wrap at 100 characters.
 
-- **Tab Width**
+</details>
 
-  2 spaces per indentation-level.
+<details>
+  <summary>Tab Width</summary>
 
-- **Tabs**
+  2 spaces per indentation-level (or 4 spaces if you choose).
+
+</details>
+
+<details>
+  <summary>Tabs</summary>
 
   Indent lines with spaces, not tabs.
 
-- **Semicolons**
+</details>
+
+<details>
+  <summary>Semicolons</summary>
 
   Always print semicolons at the ends of statements.
 
@@ -155,7 +202,10 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   const greeting = 'hi';
   ```
 
-- **Quote**
+</details>
+
+<details>
+  <summary>Quote</summary>
 
   Use single quotes instead of double quotes.
 
@@ -163,7 +213,10 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   const quote = 'single quotes are better';
   ```
 
-- **Trailing Commas**
+</details>
+
+<details>
+  <summary>Trailing Commas</summary>
 
   Use trailing commas wherever possible.
 
@@ -174,30 +227,42 @@ Check out all of Prettier's [configuration options](https://prettier.io/docs/en/
   };
   ```
 
-- **Bracket Spacing**
+</details>
+
+<details>
+  <summary>Bracket Spacing</summary>
 
   Print spaces between brackets in object literals.
 
   ```js
-  {
-    foo: bar;
-  }
+  { foo: bar }
   ```
 
-- **JSX Brackets**
+</details>
+
+<details>
+  <summary>JSX Brackets</summary>
 
   Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
   ```jsx
-  <button className="prettier-class" id="prettier-id" onClick={this.handleClick}>
+  <button
+    className="prettier-class"
+    id="prettier-id"
+    onClick={this.handleClick}>
     Click Here
   </button>
   ```
 
-- **Arrow Function Parentheses**
+</details>
+
+<details>
+  <summary>Arrow Function Parentheses</summary>
 
   Omit parens when possible.
 
   ```js
   x => x;
   ```
+
+</details>
